@@ -1,11 +1,14 @@
 # named list of all robots
 robots:
-  cf231:
+  cf02:
     enabled: true
-    uri: radio://0/80/2M/E7E7E7E7E7
+    uri: radio://0/80/2M/E7E7E7E704
     initial_position: [0.0, 0.0, 0.0]
     type: cf21  # see robot_types
-    # firmware_params:
+    firmware_params:
+      stabilizer:
+        estimator: 2
+        controller: 5
     #   kalman:
     #     pNAcc_xy: 1.0 # default 0.5
     # firmware_logging:
@@ -31,7 +34,7 @@ robots:
 robot_types:
   cf21:
     motion_capture:
-      enabled: true
+      enabled: false
       # only if enabled; see motion_capture.yaml
       marker: default_single_marker
       dynamics: default
